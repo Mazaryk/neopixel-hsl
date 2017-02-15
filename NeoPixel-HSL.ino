@@ -39,13 +39,13 @@ void demo_rotate() {
   static uint8_t n = strip.numPixels();
   
   static uint16_t hue = 0; // 0-359
-  uint8_t lightness = 50; // 0-100
   uint8_t saturation = 100; // 0-100
+  uint8_t lightness = 50; // 0-100
   
   uint32_t color;
   uint8_t i; 
   
-  for(i=0; i < strip.numPixels(); i++) {
+  for(i=0; i < n; i++) {
     color = hsl(hue++, saturation, lightness);
     strip.setPixelColor(i, color);
     strip.setPixelColor((i+n/3)%n, color);
