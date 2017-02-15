@@ -5,16 +5,19 @@ While using the awesome AdaFruit NeoPixels, I found it much more intuitive to us
 
 This implementation is designed for use with the NeoPixel Library, but should be easily modifiable to be used in other contexts. 
 
+
 ## Usage
 
-* Assumes the existence a global Adafruit_NeoPixel variable with the name “strip” 
+Assumes the existence a global Adafruit_NeoPixel variable with the name “strip” 
 
 ### Inline
+
 strip.setPixelColor(index, hsl(hue, saturation, lightness));
 
 ### Assignment
+
 uint32_t colour = hsl(hue, saturation, lightness);
-strip.setPixelColor(index, colour);
+
 
 ### Good To Know
 * Hue is specified in degrees, thus ranges from 0 - 359
@@ -22,6 +25,7 @@ strip.setPixelColor(index, colour);
 * Saturation is a percentage, ranges 0 - 100
 * Lightness is a percentage, ranges 0 - 100
 * Saturation and Lightness inputs are constrained, anything > 100 will be treated as 100.
+
 
 ## HSL Primer
 
