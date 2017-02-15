@@ -52,10 +52,9 @@ void demo_rotate() {
     strip.setPixelColor((i+n/3*2)%n, color);
     strip.show();
     delay(40);
-    hue++;
   }
 
-  hue = hue % 360;
+  hue %= 360;
 }
 /**
  * Demo Random
