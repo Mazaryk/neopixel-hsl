@@ -39,8 +39,8 @@ void demo_rotate() {
   static uint8_t n = strip.numPixels();
   
   static uint16_t hue = 0; // 0-359
-  uint8_t saturation = 100; // 0-100
-  uint8_t lightness = 50; // 0-100
+  uint8_t saturation = 0; // 0-100
+  uint8_t lightness = 100; // 0-100
   
   uint32_t color;
   uint8_t i; 
@@ -91,6 +91,11 @@ uint32_t hsl(uint16_t ih, uint8_t is, uint8_t il) {
   s = constrain(is, 0, 100) / 100.0;
   l = constrain(il, 0, 100) / 100.0;
 
+  if ( s == 0 ) { 
+    r = g = b = 255 * l;
+    return strip.Color(r, g, b);
+  } 
+  
   if ( l < 0.5 ) t1 = l * (1.0 + s);
   else t1 = l + s - l * s;
   
