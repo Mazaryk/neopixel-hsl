@@ -82,10 +82,10 @@ void demo_random() {
  * Probably not the most efficient solution, but 
  * it get's the job done.
  */
-uint32_t hsl(uint16_t ih, byte is, byte il) {
+uint32_t hsl(uint16_t ih, uint8_t is, uint8_t il) {
 
   float h, s, l, t1, t2, tr, tg, tb;
-  byte r, g, b;
+  uint8_t r, g, b;
 
   h = (ih % 360) / 360.0;
   s = constrain(is, 0, 100) / 100.0;
@@ -109,7 +109,7 @@ uint32_t hsl(uint16_t ih, byte is, byte il) {
  * HSL Convert
  * Helper function
  */
-byte hsl_convert(float c, float t1, float t2) {
+uint8_t hsl_convert(float c, float t1, float t2) {
 
   if ( c < 0 ) c+=1; 
   else if ( c > 1 ) c-=1;
@@ -119,5 +119,5 @@ byte hsl_convert(float c, float t1, float t2) {
   else if ( 3 * c < 2 ) c = t2 + ( t1 - t2 ) * ( 2/3.0 - c ) * 6;
   else c = t2;
   
-  return (byte)(c*255); 
+  return (uint8_t)(c*255); 
 }
