@@ -12,11 +12,11 @@ Assumes the existence a global Adafruit_NeoPixel variable with the name “strip
 
 ### Inline
 
-strip.setPixelColor(index, hsl(hue, saturation, lightness));
+strip.setPixelColor(index, hsl(0, 100, 50)); // Red, full saturation and brightness
 
 ### Assignment
 
-uint32_t colour = hsl(hue, saturation, lightness);
+uint32_t colour = hsl(120, 100, 25); // Green, full saturation, half brighness
 
 
 ### Good To Know
@@ -32,7 +32,7 @@ uint32_t colour = hsl(hue, saturation, lightness);
 Here are some notes/gotchas for those new to HSL, but familiar with RGB.
 
 * Hue values should be stored in an int (or uint16_t), not a byte (or uint8_t)
-* Saturation and lightness can be stored in a byte (or uint8_t)
+* Saturation and lightness values can be stored in a byte (or uint8_t)
 * The value returned by hsl() should be stored in a uint32_t
 * A lightness value of 0 is off (same as RGB: 0,0,0) regardless of h or s values
 * A Lightness value of 50 is full colour lightness (Red in RGB 255,0,0 in HSL is 0,100,50)
