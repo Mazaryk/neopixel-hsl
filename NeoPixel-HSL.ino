@@ -92,7 +92,7 @@ uint32_t hsl(uint16_t ih, uint8_t is, uint8_t il) {
 
   if ( s == 0 ) { 
     r = g = b = 255 * l;
-    return strip.Color(r, g, b);
+    return ((uint32_t)r << 16) | ((uint32_t)g <<  8) | b;
   } 
   
   if ( l < 0.5 ) t1 = l * (1.0 + s);
@@ -107,7 +107,8 @@ uint32_t hsl(uint16_t ih, uint8_t is, uint8_t il) {
   g = hsl_convert(tg, t1, t2);
   b = hsl_convert(tb, t1, t2);
 
-  return strip.Color(r, g, b); 
+  // NeoPixel packed RGB color
+  return ((uint32_t)r << 16) | ((uint32_t)g <<  8) | b;
 }
 /**
  * HSL Convert
