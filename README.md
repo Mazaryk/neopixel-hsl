@@ -1,7 +1,9 @@
 # neopixel-hsl
-A Function for HSL to RGB Colour Space conversion. 
+NeoPixel HSL allows for HSL to RGB Colour Space conversion. 
 
-While using the awesome AdaFruit NeoPixels, I found it much more intuitive to use HSL (Hue, Saturation, Lightness) colour encoding instead of RGB (Red, Green, Blue). HSL makes it much easier to handle hue and brightness independently. This simplifies many common lighting effects, like fading a pixel from off to on, and keeping the colour consistent. 
+While using the awesome AdaFruit NeoPixels, I found it much more intuitive to use HSL (Hue, Saturation, Lightness) colour encoding instead of RGB (Red, Green, Blue). HSL makes it much easier to handle hue and brightness independently. This simplifies many common lighting effects, like fading a pixel from off to on, and keeping the colour consistent.
+
+Also, this will make it much easier to say, hook up a potentiomiter and have it control only the hue. Using the pot, it's simple to wipe through the entire rainbow.
 
 This implementation is designed for use with the NeoPixel Library, but should be easily modifiable to be used in other contexts. The hsl() function returns a 32 bit, packed RGB value, exaclty the same as Adafruit_NeoPixel::Color().
 
